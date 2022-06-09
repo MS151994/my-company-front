@@ -1,10 +1,13 @@
 import {SyntheticEvent, useState} from "react";
 import {Button} from "../utils/Button/Button";
 import {Spinner} from "../utils/Spinner/Spinner";
-import './userForm.css';
 import {NavButton} from "../utils/NavButton/NavButton";
+import {useCookies} from "react-cookie";
+import './userForm.css';
+import {config} from "../../config/config";
 
 export const UserLogin = () => {
+    const [cookie, setCookie] = useCookies(['user']);
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         name: '',
@@ -23,7 +26,7 @@ export const UserLogin = () => {
         setLoading(true);
 
         try {
-            const res = await fetch('http://localhost:3001', {
+            const res = await fetch(config.api, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +34,7 @@ export const UserLogin = () => {
                 body: JSON.stringify(form)
             })
             const data = await res.json();
-            console.log(data);
+            setCookie('user', data.id, {path: '/'});
         } finally {
             setLoading(false);
         }

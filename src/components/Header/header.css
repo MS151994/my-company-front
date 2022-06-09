@@ -1,0 +1,29 @@
+.header__container {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
+}
+
+.header__container div {
+    padding: 10px;
+}
+
+.logout__button {
+    padding: 3px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+    background: transparent;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout__button:hover {
+    border-color:  red;
+    color: red;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

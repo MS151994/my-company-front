@@ -2,6 +2,7 @@ import {SyntheticEvent, useState} from "react";
 import {Button} from "../utils/Button/Button";
 import {Spinner} from "../utils/Spinner/Spinner";
 import {NavButton} from "../utils/NavButton/NavButton";
+import {config} from "../../config/config";
 
 export const UserRegister = () => {
     const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ export const UserRegister = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:3001/newuser', {
+            const res = await fetch(`${config.api}/registration`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
