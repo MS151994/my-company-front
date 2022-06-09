@@ -1,0 +1,15 @@
+.my__button{
+    margin: 10px;
+    width: 20%;
+    height: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.my__button:hover{
+    background: orange;
+}
