@@ -2,6 +2,7 @@ import {SyntheticEvent, useState} from "react";
 import {Button} from "../utils/Button/Button";
 import {Spinner} from "../utils/Spinner/Spinner";
 import './userForm.css';
+import {NavButton} from "../utils/NavButton/NavButton";
 
 export const UserLogin = () => {
     const [loading, setLoading] = useState(false);
@@ -60,6 +61,7 @@ export const UserLogin = () => {
                 />
             </label>
             {loading ? <Spinner/> : <Button buttonName={"login"}/>}
+            <NavButton buttonName={"sing up"} to={"/register"} infoText={"You don't have an account? please"}/>
         </form>
     )
 }

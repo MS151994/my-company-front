@@ -1,0 +1,9 @@
+.nav__button {
+    text-decoration: none;
+    color: orange;
+    cursor: pointer;
+}
+.info__text {
+    color: rgba(0, 0, 0, 0.7);
+    font-style: italic;
+}
