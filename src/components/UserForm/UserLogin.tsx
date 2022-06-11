@@ -3,11 +3,11 @@ import {Button} from "../utils/Button/Button";
 import {Spinner} from "../utils/Spinner/Spinner";
 import {NavButton} from "../utils/NavButton/NavButton";
 import {useCookies} from "react-cookie";
-import './userForm.css';
 import {config} from "../../config/config";
+import './userForm.css';
 
 export const UserLogin = () => {
-    const [cookie, setCookie] = useCookies(['user']);
+    const [cookie, setCookie] = useCookies(['user', 'username']);
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         name: '',
@@ -17,7 +17,7 @@ export const UserLogin = () => {
     const updateForm = (key: string, value: string) => {
         setForm(form => ({
             ...form,
-            [key]: value
+            [key]: value.toLowerCase()
         }));
     }
 
@@ -35,6 +35,7 @@ export const UserLogin = () => {
             })
             const data = await res.json();
             setCookie('user', data.id, {path: '/'});
+            setCookie('username', data.name, {path: '/'});
         } finally {
             setLoading(false);
         }
@@ -64,7 +65,7 @@ export const UserLogin = () => {
                 />
             </label>
             {loading ? <Spinner/> : <Button buttonName={"login"}/>}
-            <NavButton buttonName={"sing up"} to={"/register"} infoText={"You don't have an account? please"}/>
+            <NavButton buttonName={"sing up"} to={"/register"} infoText={"You don't have an account? please "}/>
         </form>
     )
 }

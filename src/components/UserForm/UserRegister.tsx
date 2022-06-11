@@ -15,7 +15,7 @@ export const UserRegister = () => {
     const updateForm = (key: string, value: string) => {
         setForm(form => ({
             ...form,
-            [key]: value
+            [key]: value.toLowerCase()
         }))
     }
 
@@ -71,7 +71,7 @@ export const UserRegister = () => {
                 />
             </label>
             {loading ? <Spinner/> : <Button buttonName={"sing up"}/>}
-            <NavButton buttonName={"login"} to={"/login"} infoText={"If you have account? please "}/>
+            <NavButton buttonName={"login"} to={"/"} infoText={"If you have account? please "}/>
         </form>
     )
 }
