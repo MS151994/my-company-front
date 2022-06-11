@@ -10,10 +10,8 @@ export const App = () => {
     return (
         <div>
             <CookiesProvider>
-                <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
-                    <Route path="/login" element={<UserLogin/>}/>
                     <Route path="/register" element={<UserRegister/>}/>
                 </Routes>
             </CookiesProvider>
