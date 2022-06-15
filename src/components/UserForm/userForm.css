@@ -9,7 +9,7 @@
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.45);
     border-radius: 4px;
-    width: 40vw;
+    width: 80vw;
     height: 40vh;
     margin: 5px auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -29,4 +29,32 @@
     color: red;
     font-style: italic;
     padding: 0;
+}
+
+@media (min-width: 844px)  and (orientation: landscape) {
+    .userForm__container {
+        width: 50vw;
+        height: 95vh;
+    }
+}
+
+@media (min-width: 768px)  and (orientation: landscape) {
+    .userForm__container {
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+@media (min-width: 768px)  and (orientation: portrait) {
+    .userForm__container {
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .userForm__container {
+        width: 45vw;
+        height: 45vh;
+    }
 }
