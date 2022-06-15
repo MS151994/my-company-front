@@ -13,6 +13,7 @@ export const UserLogin = () => {
         name: '',
         password: '',
     });
+    const [message, setMessage] = useState('');
 
     const updateForm = (key: string, value: string) => {
         setForm(form => ({
@@ -34,6 +35,9 @@ export const UserLogin = () => {
                 body: JSON.stringify(form)
             })
             const data = await res.json();
+            if (data.message) {
+                setMessage(data.message);
+            }
             setCookie('user', data.id, {path: '/'});
             setCookie('username', data.name, {path: '/'});
         } finally {
@@ -44,6 +48,7 @@ export const UserLogin = () => {
     return (
         <form className={"userForm__container"} onSubmit={handleLogin}>
             <h1>Sign in</h1>
+            {message && <p className={"message__info"}>{message}</p>}
             <label>
                 <input
                     type="text"
