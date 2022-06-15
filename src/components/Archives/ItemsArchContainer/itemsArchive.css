@@ -1,0 +1,11 @@
+.itemsArch__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.itemsArch__container p {
+    margin-right: 5px;
+}

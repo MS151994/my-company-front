@@ -39,6 +39,7 @@ export const ItemContainer = () => {
                     title={el.title}
                     description={el.description}
                     deadline={el.deadline}
+                    isActive={el.isActive}
                 />)}
         </div>
     )
