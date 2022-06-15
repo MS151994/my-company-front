@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "types": [
-        "../company-menager-back/types"
+        "../backend/types"
       ]
     }
   }
