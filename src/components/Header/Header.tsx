@@ -1,6 +1,7 @@
 import './header.css';
 import {useCookies} from "react-cookie";
 import {IconNotification} from "../IconNotification/IconNotification";
+import {Menu} from "./Menu/Menu";
 
 export const Header = () => {
     const [cookie, setCookie, removeCookie] = useCookies(['user', 'username']);
@@ -18,6 +19,7 @@ export const Header = () => {
                     <div>
                         <button className={"logout__button"} onClick={handleLogout}>logout</button>
                     </div>
+                    <Menu/>
                 </div>
             }
         </div>
